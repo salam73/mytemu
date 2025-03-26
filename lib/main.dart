@@ -1,3 +1,4 @@
+import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:video_player/video_player.dart';
@@ -7,23 +8,22 @@ void main() => runApp(
 );
 
 class MyRiveAnimation extends StatefulWidget {
+  const MyRiveAnimation({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyRiveAnimationState createState() => _MyRiveAnimationState();
 }
 
 class _MyRiveAnimationState extends State<MyRiveAnimation> {
-  late VideoPlayerController _videoController;
+  late CachedVideoPlayerPlusController _videoController;
 
   @override
   void initState() {
     super.initState();
-    // Initialize the video player controller
-    //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
-    //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
-    //https://drive.google.com/file/d/1bZh5FD6qrsXnrvboifyXolbKiPOjxx4h/view?usp=drive_link
-    //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
+
     _videoController =
-        VideoPlayerController.networkUrl(
+        CachedVideoPlayerPlusController.networkUrl(
             Uri.parse(
               'https://drive.google.com/uc?export=download&id=1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9',
             ),
@@ -54,11 +54,11 @@ class _MyRiveAnimationState extends State<MyRiveAnimation> {
                     _videoController.value.isInitialized
                         ? AspectRatio(
                           aspectRatio: _videoController.value.aspectRatio,
-                          child: VideoPlayer(_videoController),
+                          child: CachedVideoPlayerPlus(_videoController),
                         )
                         : const Center(child: CircularProgressIndicator()),
               ),
-              myImage(
+              MyImage(
                 url:
                     'https://drive.google.com/uc?export=download&id=1AWn2j-pU1zt6ADctA8Ap9F4lL1fpBTuH',
               ),
@@ -66,9 +66,9 @@ class _MyRiveAnimationState extends State<MyRiveAnimation> {
               SizedBox(
                 height: 300,
                 child: rive.RiveAnimation.network(
-                  //https://drive.google.com/file/d/1xasW5N9AjTIptYZs1oUIQVjKO_Xai6Xz/view?usp=drive_link
-                  //https://drive.google.com/file/d/1aF0IbF_KkeDM075CA_lzSL-yFA20jmNJ/view?usp=drive_link
-                  "https://drive.google.com/uc?export=download&id=1aF0IbF_KkeDM075CA_lzSL-yFA20jmNJ",
+                  //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
+                  //1xasW5N9AjTIptYZs1oUIQVjKO_Xai6Xz
+                  "https://drive.google.com/uc?export=download&id=1xasW5N9AjTIptYZs1oUIQVjKO_Xai6Xz",
                   fit: BoxFit.contain,
                 ),
               ),
@@ -117,10 +117,10 @@ class _MyRiveAnimationState extends State<MyRiveAnimation> {
   }
 }
 
-class myImage extends StatelessWidget {
+class MyImage extends StatelessWidget {
   final String url;
 
-  const myImage({required this.url, super.key});
+  const MyImage({required this.url, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +155,10 @@ class myImage extends StatelessWidget {
 }
 
 class RiveFromNetwork extends StatefulWidget {
+  const RiveFromNetwork({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _RiveFromNetworkState createState() => _RiveFromNetworkState();
 }
 
@@ -193,5 +196,3 @@ class _RiveFromNetworkState extends State<RiveFromNetwork> {
     );
   }
 }
-
-//hello
