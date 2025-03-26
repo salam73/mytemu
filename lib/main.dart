@@ -65,10 +65,6 @@ class _MyRiveAnimationState extends State<MyRiveAnimation> {
               SizedBox(
                 height: 300,
                 child: rive.RiveAnimation.network(
-                  //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
-                  //1xasW5N9AjTIptYZs1oUIQVjKO_Xai6Xz
-                  //https://drive.google.com/file/d/1aF0IbF_KkeDM075CA_lzSL-yFA20jmNJ/view?usp=drive_link
-                  //https://drive.google.com/file/d/1omQ2_d1dKAv75xVbuNLW_TemPUDv15JC/view?usp=drive_link
                   "https://drive.google.com/uc?export=download&id=1aF0IbF_KkeDM075CA_lzSL-yFA20jmNJ",
                   fit: BoxFit.contain,
                 ),
