@@ -21,10 +21,11 @@ class _MyRiveAnimationState extends State<MyRiveAnimation> {
     //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
     //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
     //https://drive.google.com/file/d/1bZh5FD6qrsXnrvboifyXolbKiPOjxx4h/view?usp=drive_link
+    //https://drive.google.com/file/d/1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9/view?usp=drive_link
     _videoController =
         VideoPlayerController.networkUrl(
             Uri.parse(
-              'https://drive.google.com/uc?export=download&id=1bZh5FD6qrsXnrvboifyXolbKiPOjxx4h',
+              'https://drive.google.com/uc?export=download&id=1mYR1S3XSUBM5qCRyn_TrpOv5-nczxmJ9',
             ),
           )
           ..initialize().then((_) {
@@ -65,7 +66,8 @@ class _MyRiveAnimationState extends State<MyRiveAnimation> {
               SizedBox(
                 height: 300,
                 child: rive.RiveAnimation.network(
-                  "https://drive.google.com/uc?export=download&id=1gqdSHpH-HDyvIwnT3-lz99IWIMyG8zcK",
+                  //https://drive.google.com/file/d/1xasW5N9AjTIptYZs1oUIQVjKO_Xai6Xz/view?usp=drive_link
+                  "https://drive.google.com/uc?export=download&id=1xasW5N9AjTIptYZs1oUIQVjKO_Xai6Xz",
                   fit: BoxFit.contain,
                 ),
               ),
